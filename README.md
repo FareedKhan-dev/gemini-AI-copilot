@@ -34,10 +34,28 @@ image_model = genai.GenerativeModel('gemini-pro-vision')
 genai.configure(api_key="Your-API-key")
 ```
 We have loaded two models, gemini-pro, which serves as our text model for generating code or engaging in code-related conversations, and gemini-pro-vision, which will be used to manage image-related features of our Copilot. You can obtain your API key from [here](https://makersuite.google.com/app/apikey) for free. Next, we need to import the library that we will be using to create Copilot functions.
+```python
+# Regular expression for pattern matching
+import re
 
-    ##################### Libraries import
-    
+# IPython for working with IPython environment
+import IPython
 
+# OS for interacting with the operating system
+import os
+
+# JSON for working with JSON data
+import json
+
+# Base64 for encoding and decoding base64 data
+import base64
+
+# Image class from IPython.display for displaying images
+from IPython.display import Image
+
+# register_line_magic for registering custom magic commands
+from IPython.core.magic import register_line_magic
+```
 Let’s start coding a simple feature of our Copilot, which is to chat. The reason for starting with this feature is that it will make it easier to understand later code when we build more complex features.
 
 ## Simple Chat Feature
